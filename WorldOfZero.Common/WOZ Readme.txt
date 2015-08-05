@@ -1,0 +1,1 @@
+﻿WorldOfZero.Common is a common library containing a number of shared tools used for handling view models, collections and more. A subset of the library is included here.
