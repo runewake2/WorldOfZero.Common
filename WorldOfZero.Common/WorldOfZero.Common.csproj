@@ -39,7 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\ExpandingGrid.cs" />
-    <Compile Include="DataStructures\ExpandingGrid.cs" />
     <Compile Include="MVVM\ViewModels\BaseViewModel.cs" />
     <Compile Include="MVVM\ViewModels\IViewModel.cs" />
     <Compile Include="Orientation.cs" />
