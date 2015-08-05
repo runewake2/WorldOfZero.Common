@@ -65,7 +65,7 @@ namespace WorldOfZero.Common.MVVM.ViewModels
         /// </summary>
         private IDictionary<string, Action> ReflectTypeProperties()
         {
-            var viewModelProperties = GetType().GetProperties().Where(p => p.CanWrite); // uses reflection (slow)
+            var viewModelProperties = GetType().GetRuntimeProperties().Where(p => p.CanWrite); // uses reflection (slow)
 
             return viewModelProperties
                    .Select(property => new KeyValuePair<string, Action>(property.Name,
