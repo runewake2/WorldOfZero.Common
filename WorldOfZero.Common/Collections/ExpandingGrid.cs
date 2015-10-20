@@ -23,6 +23,10 @@ namespace WorldOfZero.Common.Collections
 
         public void AddElement(T element, int colSpan, int rowSpan)
         {
+            if (colSpan >= _columns)
+            {
+                colSpan = _columns;
+            }
             var elem = new ExpandingGridElement(element, colSpan, rowSpan);
             
             for (int y = 0; y < _rows.Count; ++y)
@@ -50,7 +54,7 @@ namespace WorldOfZero.Common.Collections
             for (int y = 0; y < element.RowSpan; ++y)
             {
                 int currentRow = y + row;
-                if (currentRow > _rows.Count)
+                if (currentRow >= _rows.Count)
                 {
                     throw new IndexOutOfRangeException("Attempting to insert into a grid which has not been properly expanded. Something broke.");
                 }
@@ -58,7 +62,7 @@ namespace WorldOfZero.Common.Collections
                 for (int x = 0; x < element.ColumnSpan; ++x)
                 {
                     int currentColumn = x + column;
-                    if (currentColumn > _columns)
+                    if (currentColumn >= _columns)
                     {
                         throw new IndexOutOfRangeException("Attempting to insert into a column without enough room.");
                     }
